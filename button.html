@@ -1,0 +1,49 @@
+<style>
+        .go2117227218 {
+                margin: 15px !important;
+        }
+</style>
+
+<button type="button"
+        onClick="handleTempHint('hint-temp')"
+        id="hint-temp"
+        style="text-align: center;margin: 0px 10px 5px 0px;padding: 4px;border-radius: 15px;border: 3px solid #4F5E77;color: #000;background-color: #f4f4f4;cursor: pointer;font-size: 18px;width: 165px;"
+>Code Description
+</button>
+
+<script>
+        window.onload = function () {
+                var hint = document.getElementById("hint-temp").parentNode.parentNode.parentNode.parentNode.nextElementSibling;
+                hint.style.display = "none";
+                hint.firstElementChild.firstElementChild.style.cssText = `
+               background-color:white; border-radius:15px; border:1px solid lightgray;
+          `;
+        };
+
+        function handleTempHint(text) {
+                var this_content = document.getElementById("hint-temp").parentElement.parentElement.parentElement.parentElement.nextElementSibling;
+                var this_button = document.getElementById("hint-temp");
+                var borderColor = "#4F5E77";
+
+                if (this_content.style.display === "block") {
+                        this_content.style.display = "none";
+                } else {
+                        this_content.style.display = "block";
+                        this_content.style.border = "10px solid #36445c !important";
+                }
+        }
+
+        var hintButton = document.getElementById("hint-temp");
+
+        hintButton.addEventListener("click", function() {
+                if (hintButton.style.backgroundColor === hintButton.style.borderColor) {
+                        hintButton.style.backgroundColor = "#f4f4f4";
+                        hintButton.style.borderColor = "#4F5E77";
+                        hintButton.style.color = "black";
+                } else {
+                        hintButton.style.backgroundColor = hintButton.style.borderColor;
+                        hintButton.style.borderColor = "#4F5E77";
+                        hintButton.style.color = "white";
+                }
+        });
+</script>
